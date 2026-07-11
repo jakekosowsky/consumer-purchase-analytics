@@ -1,0 +1,8 @@
+jupyter
+matplotlib
+numpy
+pandas
+scikit-learn
+seaborn
+selenium
+webdriver-manager
