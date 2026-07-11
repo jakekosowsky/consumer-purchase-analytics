@@ -1,25 +1,37 @@
-# Consumer Purchase Analytics
+# Brand Retention and Consumer Purchase Behavior
 
-An end-to-end workflow for enriching receipt-level purchase data, matching product descriptions to brands, measuring category trends and retention, and analyzing cross-brand customer overlap.
+A personal project focused on a straightforward consumer question: which brands retain customers, and which brands tend to share the same buyers?
 
-## Workflow
+The analysis transforms noisy receipt descriptions into brand-level purchase histories, then measures category trends, repeat purchasing, and cross-brand customer overlap.
 
-1. Collect a reference list of brands.
-2. Normalize noisy product descriptions and match them to brand variants.
+## Analytical workflow
+
+1. Collect a public reference list of brands.
+2. Normalize receipt descriptions and resolve brand-name variants.
 3. Fill and consolidate product categories.
-4. Estimate category and item trends.
-5. Measure retention and cross-brand overlap.
-6. Identify data-quality and selection-bias risks.
+4. Measure item and category purchasing trends.
+5. Compare customer retention across brands.
+6. Calculate directional brand-to-brand customer overlap.
+7. Audit unmatched records and potential selection bias.
 
 ## Repository structure
 
-- `notebooks/purchase_analytics.ipynb` — cleaning, enrichment, trend, retention, and overlap analysis
-- `data/` — intentionally empty; proprietary receipt data is not published
-
-## Tools
-
-Python, pandas, NumPy, Selenium, scikit-learn, Matplotlib, Seaborn, and Jupyter.
+```text
+src/
+  scrape_brands.py       public brand-reference collection
+  brand_matching.py      receipt normalization and enrichment
+analysis/
+  category_trends.py     item and category momentum
+  retention.py           repeat-purchase behavior
+  brand_overlap.py       shared-customer analysis
+notebooks/
+  purchase_analytics.ipynb
+```
 
 ## Data policy
 
-The original receipt dataset is excluded because it is large and may be proprietary. The notebook is published to demonstrate methodology; users should supply data they are authorized to analyze.
+The original receipt-level source data is not published. The repository presents the analytical methodology and separated code structure without redistributing consumer records.
+
+## Tools
+
+Python · pandas · NumPy · Selenium · scikit-learn · Matplotlib · Seaborn
